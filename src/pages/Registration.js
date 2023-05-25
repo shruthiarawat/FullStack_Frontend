@@ -16,7 +16,7 @@ function Registration() {
     });
 
     const onSubmit = (data) =>  {
-        axios.post("https://react-fullstack-server.herokuapp.com/auth", data).then(()=>{
+        axios.post("https://fullstackreact-server.herokuapp.com/auth", data).then(()=>{
             console.log(data);
         });
     }; 

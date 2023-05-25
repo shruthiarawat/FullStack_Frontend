@@ -15,7 +15,7 @@ function Home() {
     if(!localStorage.getItem("accessToken")) {
       navigate('/login');
     } else {
-    axios.get("https://react-fullstack-server.herokuapp.com/posts", 
+    axios.get("https://fullstackreact-server.herokuapp.com/posts", 
     { headers: { accessToken: localStorage.getItem("accessToken")}})
     .then((response) => {
       setListOfPosts(response.data.listOfPosts);
@@ -27,7 +27,7 @@ function Home() {
   }, []);
 
   const likeAPost = (postId) => {
-    axios.post("https://react-fullstack-server.herokuapp.com/likes", 
+    axios.post("https://fullstackreact-server.herokuapp.com/likes", 
     { PostId: postId}, 
     { headers: { accessToken: localStorage.getItem("accessToken")}}
     ).then((response) => {
