@@ -13,17 +13,17 @@ function Post() {
     let navigate = useNavigate();
 
     useEffect(() => {
-      axios.get(`https://fullstackreact-server.herokuapp.com/posts/byId/${id}`).then((response) => {
+      axios.get(`https://reactfullstack-server.herokuapp.com/posts/byId/${id}`).then((response) => {
         setPostObject(response.data);
     });
 
-    axios.get(`https://fullstackreact-server.herokuapp.com/comments/${id}`).then((response) => {
+    axios.get(`https://reactfullstack-server.herokuapp.com/comments/${id}`).then((response) => {
         setComments(response.data);
     });
     }, []);
 
     const addComment = () => {
-      axios.post("https://fullstackreact-server.herokuapp.com/comments", { 
+      axios.post("https://reactfullstack-server.herokuapp.com/comments", { 
         commentBody: newComment, 
         PostId: id},
         {
@@ -44,7 +44,7 @@ function Post() {
     };
 
     const deleteComment = (id) => {
-      axios.delete(`https://fullstackreact-server.herokuapp.com/comments/${id}`, {
+      axios.delete(`https://reactfullstack-server.herokuapp.com/comments/${id}`, {
         headers: {
           accessToken: localStorage.getItem("accessToken")
         }
@@ -56,7 +56,7 @@ function Post() {
     };
 
     const deletePost = (id) => {
-      axios.delete(`https://fullstackreact-server.herokuapp.com/posts/${id}`, {
+      axios.delete(`https://reactfullstack-server.herokuapp.com/posts/${id}`, {
         headers: {
           accessToken: localStorage.getItem("accessToken")
         }
@@ -68,7 +68,7 @@ function Post() {
     const editPost = (option) => {
       if (option ==="title") {
         let newTitle = prompt("Enter New Title:");
-        axios.put("https://fullstackreact-server.herokuapp.com/posts/title", {
+        axios.put("https://reactfullstack-server.herokuapp.com/posts/title", {
             newTitle: newTitle, 
             id: id,
           },
@@ -80,7 +80,7 @@ function Post() {
         setPostObject({...postObject, title: newTitle});
       } else {
         let newPostText = prompt("Enter New Text:");
-        axios.put("https://fullstackreact-server.herokuapp.com/posts/postText", {
+        axios.put("https://reactfullstack-server.herokuapp.com/posts/postText", {
           newText: newPostText, 
           id: id,
         },

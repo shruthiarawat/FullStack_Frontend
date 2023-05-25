@@ -20,7 +20,7 @@ function App() {
   });
 
   useEffect(() => {
-    axios.get('https://fullstackreact-server.herokuapp.com/auth/auth', { headers: {
+    axios.get('https://reactfullstack-server.herokuapp.com/auth/auth', { headers: {
       accessToken: localStorage.getItem("accessToken"),
     },
   })

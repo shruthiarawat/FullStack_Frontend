@@ -13,7 +13,7 @@ function Login() {
     
     const login = () => {
         const data = {username: username, password: password};
-        axios.post("https://fullstackreact-server.herokuapp.com/auth/login", data).then((response) => {
+        axios.post("https://reactfullstack-server.herokuapp.com/auth/login", data).then((response) => {
             if (response.data.error) {
               alert(response.data.error);
             } else {

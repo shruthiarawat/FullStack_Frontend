@@ -12,13 +12,13 @@ function Profile() {
 
     useEffect(() =>{
       axios
-        .get(`https://fullstackreact-server.herokuapp.com/auth/basicinfo/${id}`)
+        .get(`https://reactfullstack-server.herokuapp.com/auth/basicinfo/${id}`)
         .then((response) => {
           setUsername(response.data.username);
       });
 
       axios
-        .get(`https://fullstackreact-server.herokuapp.com/posts/byuserId/${id}`)
+        .get(`https://reactfullstack-server.herokuapp.com/posts/byuserId/${id}`)
         .then((response) => {
           setListOfPosts(response.data);
         });
